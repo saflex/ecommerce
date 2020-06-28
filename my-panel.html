@@ -1,0 +1,1440 @@
+<!doctype html>
+<!--[if IE 8 ]>
+<html lang="en" class="no-js ie8">
+  <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>
+  <!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <link rel="canonical" href="/" />
+    <meta name="description" content="" />
+    <title>Webtransfer</title>
+    <!--[if IE 8 ]>
+    <link href="./assets/stylesheets/ie8.css" rel="stylesheet" type="text/css" media="all">
+    <![endif]-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+    google.load("visualization", "1", { packages: ["corechart"] });
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Год', 'Продажи'],
+            ['2013', 0],
+            ['2014', 0],
+            ['2015', 4],
+            ['2016', 10]
+        ]);
+
+        var options = {
+            title: 'Отчет',
+            hAxis: { title: 'Год', titleTextStyle: { color: '#333' } },
+            vAxis: { minValue: 0 }
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+    </script>
+</head>
+
+<body style="visibility: hidden" onload="setTimeout ('document.body.style.visibility = \'visible\'', 0)">
+    <!-- Header -->
+    <header id="top" class="fadeInDownBig clearfix">
+        <!--Top-->
+        <div class="top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-10 col-sm-6 header-left hidden-xs">
+                        <div class="currencies-switcher">
+                            <div class="currency-plain">
+                                <select class="selectpicker currencies_src svs" name="currencies">
+                                    <option value="EUR" selected="selected">С-CREDS</option>
+                                    <option value="USD">P-CREDS</option>
+                                </select>
+                                <select class="currencies_src hide" name="currencies">
+                                    <option value="EUR" selected="selected">С-CREDS</option>
+                                    <option value="USD">P-CREDS</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-14 col-lg-10 col-sm-14 header-right hidden-xs">
+                        <div class="account">
+                            <a href="./account.html">Акции</a>
+                        </div>
+                        <div class="account">
+                            <a href="./account.html">Мой аккаунт</a>
+                        </div>
+                        <div class="wishlist">
+                            <a href="./wish-list.html">Избранное</a>
+                        </div>
+                        <div class="customer-links">
+                            <ul id="accounts" class="list-inline">
+                                <li class="login">
+                                    <span id="loginButton" data-href="./ajax/_product-qs.html" data-target="#quick-shop-modal" class="dropdown-toggle quick_shop sffwq" data-toggle="modal">
+                                        Вход <i class="sub-dropdown1"></i> <i class="sub-dropdown"></i>
+                                    </span>
+                                </li>
+                                <li class="register">
+                                    <a href="./allseller.html" id="customer_register_link">Продавцам</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Top other-->
+        <div class="top-others">
+            <div class="container">
+                <div class="row top-other">
+                    <div class="top-logo col-md-6">
+                        <a id="site-title" href="./index.html">
+                            <img class="img-responsive" src="./assets/images/logo.gif"></a>
+                    </div>
+                    <div class="top-navigation col-md-11">
+                        <nav class="navbar" role="navigation">
+                            <div class="clearfix">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="sr-only">Toggle main navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="is-mobile visible-xs">
+                                    <ul class="list-inline">
+                                        <li class="is-mobile-menu">
+                                            <div class="btn-navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                                                <span class="icon-bar-group">
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li class="is-mobile-login">
+                                            <div class="btn-group">
+                                                <div class="dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="fa fa-user"></i>
+                                                </div>
+                                                <ul class="customer dropdown-menu">
+                                                    <li class="logout">
+                                                        <a href="./login.html">Вход</a>
+                                                    </li>
+                                                    <li class="account last">
+                                                        <a href="./register.html">Регистрация</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="is-mobile-currency currencies-switcher">
+                                            <div class="currency btn-group uppercase">
+                                                <a class="currency_wrapper dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="sub-dropdown1"></i>
+                                                    <i class="sub-dropdown"></i>
+                                                    <span class="currency_code">C-CREDS</span>
+                                                    <i class="fa fa-caret-down"></i>
+                                                </a>
+                                                <ul class="currencies dropdown-menu text-left">
+                                                    <li class="currency-EUR">
+                                                        <a href="javascript:">C-CREDS</a>
+                                                        <input type="hidden" value="EUR"></li>
+                                                    <li class="currency-USD active">
+                                                        <a href="javascript:">P-CREDS</a>
+                                                        <input type="hidden" value="USD"></li>
+                                                </ul>
+                                                <select class="currencies_src hide" name="currencies">
+                                                    <option value="EUR" selected="selected">C-CREDS</option>
+                                                    <option value="USD">P-CREDS</option>
+                                                </select>
+                                            </div>
+                                        </li>
+                                        <li class="is-mobile-cart">
+                                            <a href="/cart">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </a>
+                                        </li>
+                                        <li class="is-mobile-wishlist">
+                                            <a href="/account">
+                                                <i class="fa fa-heart"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="collapse navbar-collapse">
+                                    <ul class="nav navbar-nav hoverMenuWrapper">
+                                        <li class="">
+                                            <a href="./blog.html">
+                                                <span>Ссылка 1</span>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="./collection.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                                <span>Ссылка 2</span>
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="sub-dropdown1 visible-md visible-lg"></i>
+                                                <i class="sub-dropdown visible-md visible-lg"></i>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li class="">
+                                                    <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">Pellentes sagittis sodales</a>
+                                                </li>
+                                                <li class="">
+                                                    <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">Pellentes sagittis</a>
+                                                </li>
+                                                <li class="">
+                                                    <a tabindex="-1" href="./collection.html" title="Morbi Odio">Morbi Odio</a>
+                                                </li>
+                                                <li class="">
+                                                    <a tabindex="-1" href="./collection.html" title="Amet Bibendum">Amet Bibendum</a>
+                                                </li>
+                                                <li class="">
+                                                    <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales accum">Pellentes sagittis sodales accum</a>
+                                                </li>
+                                                <li class="last">
+                                                    <a tabindex="-1" href="./collection.html" title="Accum etiam lobortis purus">Accum etiam lobortis purus</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="./product.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                                <span>Ссылка 3</span>
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="sub-dropdown1 visible-md visible-lg"></i>
+                                                <i class="sub-dropdown visible-md visible-lg"></i>
+                                            </a>
+                                            <ul class="dropdown-menu" style="overflow:hidden;display:none">
+                                                <li class="">
+                                                    <a tabindex="-1" href="./product.html" title="Pellentes sagittis sodales">Pellentes sagittis sodales</a>
+                                                </li>
+                                                <li class="">
+                                                    <a tabindex="-1" href="./product.html" title="Pellentes sagittis sodales">Pellentes sagittis sodales</a>
+                                                </li>
+                                                <li class="">
+                                                    <a tabindex="-1" href="./product.html" title="Pellentes sagittis sodales">Pellentes sagittis sodales</a>
+                                                </li>
+                                                <li class="last">
+                                                    <a tabindex="-1" href="./product.html" title="Pellentes sagittis sodales">Pellentes sagittis sodales</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="">
+                                            <a href="./blog.html">
+                                                <span>Ссылка 4</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="./contact-us.html">
+                                                <span>Ссылка 5</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="./contact-us.html">
+                                                <span>Ссылка 6</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="./contact-us.html">
+                                                <span>Ссылка 7</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="./contact-us.html">
+                                                <span>Ссылка 8</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="./contact-us.html">
+                                                <span>Ссылка 9</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="./contact-us.html">
+                                                <span>Ссылка 10</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="top-search col-md-14">
+                        <div class="umbrella hidden-xs">
+                            <div id="umbrella" class="list-inline unmargin">
+                                <div class="cart-link">
+                                    <a href="./cart.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                        <i class="sub-dropdown1"></i>
+                                        <i class="sub-dropdown"></i>
+                                        <div class="num-items-in-cart">
+                                            <span class="">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                <i class="fa fa-angle-down"></i>
+                                                <span class="number">
+                                                    2 товара -
+                                                    <span class="money">€100.00</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </a>
+                                    <div id="cart-info" class="dropdown-menu">
+                                        <div class="cart-heading">
+                                            <a href="./cart.html">Корзина</a>
+                                        </div>
+                                        <div id="cart-content">
+                                            <div class="items">
+                                                <div class="row">
+                                                    <div class="col-md-8 cart-left">
+                                                        <a class="cart-image" href="./product.html">
+                                                            <img class="img-responsive" src="./screen/demos/demo_67x80.png" alt=""></a>
+                                                        <a class="cart-close" href="#">
+                                                            <i class="fa fa-times"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-12 cart-right">
+                                                        <div class="cart-title">
+                                                            <a href="./product.html">
+                                                                Eellentes sagittis sodales accum etiam lobortis purus dictum - Pink / S
+                                                            </a>
+                                                        </div>
+                                                        <div class="cart-price">
+                                                            1
+                                                            <span class="x">x</span>
+                                                            <span class="money">€50.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-8 cart-left">
+                                                        <a class="cart-image" href="./product.html">
+                                                            <img class="img-responsive" src="./screen/demos/demo_67x80.png" alt=""></a>
+                                                        <a class="cart-close" href="#">
+                                                            <i class="fa fa-times"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-12 cart-right">
+                                                        <div class="cart-title">
+                                                            <a href="./product.html">
+                                                                Dellentes sagittis sodales accum etiam lobortis purus dictum - White / L
+                                                            </a>
+                                                        </div>
+                                                        <div class="cart-price">
+                                                            1
+                                                            <span class="x">x</span>
+                                                            <span class="money">€50.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row last">
+                                                <div class="col-md-10 cart-subtotal">
+                                                    Итого:
+                                                    <span class="money">€100.00</span>
+                                                </div>
+                                                <div class="col-md-10 action">
+                                                    <button class="btn">Заказать</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <form class="search-form" action="./index.html" method="get">
+                                <input type="text" class="form-control search-input" placeholder="Поиск..."></form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-20 col-md-20 posst">
+                        <ul class="menu">
+                            <li class="menu-item">
+                                <a href="./collection.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                    <span>Ссылка 1</span>
+                                    <i class="fa fa-angle-down whh"></i>
+                                    <i class="sub-dropdown1 visible-md visible-lg"></i>
+                                    <i class="sub-dropdown visible-md visible-lg"></i>
+                                </a>
+                                <ul class="submenu dropsq">
+                                    <div class="container">
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Morbi Odio">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales accum">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="./collection.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                    <span>Ссылка 2</span>
+                                    <i class="fa fa-angle-down whh"></i>
+                                    <i class="sub-dropdown1 visible-md visible-lg"></i>
+                                    <i class="sub-dropdown visible-md visible-lg"></i>
+                                </a>
+                                <ul class="submenu dropsq">
+                                    <div class="container">
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-gift ntdsr"></i>
+                                            </a>
+                                            <p>Сувениры</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-gift ntdsr"></i>
+                                            </a>
+                                            <p>Сувениры</p>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="./collection.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                    <span>Ссылка 3</span>
+                                    <i class="fa fa-angle-down whh"></i>
+                                    <i class="sub-dropdown1 visible-md visible-lg"></i>
+                                    <i class="sub-dropdown visible-md visible-lg"></i>
+                                </a>
+                                <ul class="submenu dropsq">
+                                    <div class="container">
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Morbi Odio">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales accum">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="./collection.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                    <span>Ссылка 4</span>
+                                    <i class="fa fa-angle-down whh"></i>
+                                    <i class="sub-dropdown1 visible-md visible-lg"></i>
+                                    <i class="sub-dropdown visible-md visible-lg"></i>
+                                </a>
+                                <ul class="submenu dropsq">
+                                    <div class="container">
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-gift ntdsr"></i>
+                                            </a>
+                                            <p>Сувениры</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-gift ntdsr"></i>
+                                            </a>
+                                            <p>Сувениры</p>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="./collection.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                    <span>Ссылка 5</span>
+                                    <i class="fa fa-angle-down whh"></i>
+                                    <i class="sub-dropdown1 visible-md visible-lg"></i>
+                                    <i class="sub-dropdown visible-md visible-lg"></i>
+                                </a>
+                                <ul class="submenu dropsq">
+                                    <div class="container">
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Morbi Odio">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales accum">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="./collection.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                    <span>Ссылка 6</span>
+                                    <i class="fa fa-angle-down whh"></i>
+                                    <i class="sub-dropdown1 visible-md visible-lg"></i>
+                                    <i class="sub-dropdown visible-md visible-lg"></i>
+                                </a>
+                                <ul class="submenu dropsq">
+                                    <div class="container">
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-gift ntdsr"></i>
+                                            </a>
+                                            <p>Сувениры</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-gift ntdsr"></i>
+                                            </a>
+                                            <p>Сувениры</p>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="./collection.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                    <span>Ссылка 7</span>
+                                    <i class="fa fa-angle-down whh"></i>
+                                    <i class="sub-dropdown1 visible-md visible-lg"></i>
+                                    <i class="sub-dropdown visible-md visible-lg"></i>
+                                </a>
+                                <ul class="submenu dropsq">
+                                    <div class="container">
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Morbi Odio">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales accum">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="./collection.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                    <span>Ссылка 8</span>
+                                    <i class="fa fa-angle-down whh"></i>
+                                    <i class="sub-dropdown1 visible-md visible-lg"></i>
+                                    <i class="sub-dropdown visible-md visible-lg"></i>
+                                </a>
+                                <ul class="submenu dropsq">
+                                    <div class="container">
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-gift ntdsr"></i>
+                                            </a>
+                                            <p>Сувениры</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-gift ntdsr"></i>
+                                            </a>
+                                            <p>Сувениры</p>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="./collection.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                    <span>Ссылка 9</span>
+                                    <i class="fa fa-angle-down whh"></i>
+                                    <i class="sub-dropdown1 visible-md visible-lg"></i>
+                                    <i class="sub-dropdown visible-md visible-lg"></i>
+                                </a>
+                                <ul class="submenu dropsq">
+                                    <div class="container">
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Morbi Odio">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales accum">
+                                                <i class="fa  fa-futbol-o ntdsr"></i>
+                                            </a>
+                                            <p>Спортивные товары</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-television ntdsr"></i>
+                                            </a>
+                                            <p>Электроника</p>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="./collection.html" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                    <span>Ссылка 10</span>
+                                    <i class="fa fa-angle-down whh"></i>
+                                    <i class="sub-dropdown1 visible-md visible-lg"></i>
+                                    <i class="sub-dropdown visible-md visible-lg"></i>
+                                </a>
+                                <ul class="submenu dropsq">
+                                    <div class="container">
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-gift ntdsr"></i>
+                                            </a>
+                                            <p>Сувениры</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis sodales">
+                                                <i class="fa  fa-book ntdsr"></i>
+                                            </a>
+                                            <p>Книги</p>
+                                        </li>
+                                        <li class="">
+                                            <a tabindex="-1" href="./collection.html" title="Pellentes sagittis">
+                                                <i class="fa  fa-gift ntdsr"></i>
+                                            </a>
+                                            <p>Сувениры</p>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="content-wrapper-parent">
+        <div id="content-wrapper">
+            <div id="content" class="container clearfix">
+                <div id="breadcrumb" class=" breadcrumb">
+                    <div class="" itemprop="breadcrumb">
+                        <a href="index.html" class="homepage-link">Главная</a>
+                        <i class="fa fa-angle-right"></i>
+                        <span class="page-title">Аккаунт</span>
+                    </div>
+                </div>
+                <section class=" content">
+                    <div id="prodcoll3" class="col-sm-5 col-md-5 sidebar topils hidden-xs hidden-sm">
+                        <div class="group_sidebar mobi-marg">
+                            <div class="row sb-wrapper unpadding-top topil">
+                                <div class="sb-title svgr">Место продаж</div>
+                            </div>
+                            <div class="sb-wrapper">
+                                <a href="m1.html">
+                                    <div class="sb-titlq  active-acc">
+                                        <i class="fa fa-sign-in bluerw fst"></i>
+                                        Панель продавца
+                                    </div>
+                                </a>
+                                <a href="m2.html">
+                                    <div class="sb-titlq">
+                                        <i class="fa fa-sliders bluerw"></i>
+                                        Управление товарами
+                                    </div>
+                                </a>
+                                <a href="m3.html">
+                                    <div class="sb-titlq">
+                                        <i class="fa fa-cart-arrow-down bluerw"></i>
+                                        Заказы
+                                    </div>
+                                </a>
+                                <a href="m4.html">
+                                    <div class="sb-titlq">
+                                        <i class="fa fa-refresh bluerw"></i>
+                                        История транзакций
+                                    </div>
+                                </a>
+                                <a href="m5.html">
+                                    <div class="sb-titlq">
+                                        <i class="fa fa-user bluerw"></i>
+                                        Мой профиль
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="group_sidebar mobi-marg">
+                            <div class="row sb-wrapper unpadding-top topil">
+                                <div class="sb-title svgr">Мой аккаунт</div>
+                            </div>
+                            <div class="sb-wrapper">
+                                <a href="account.html">
+                                    <div class="sb-titlq ">
+                                        <i class="fa fa-sign-in bluerw fst"></i>
+                                        Панель аккаунта
+                                    </div>
+                                </a>
+                                <a href="a4.html">
+                                    <div class="sb-titlq">
+                                        <i class="fa fa-question-circle bluerw"></i>
+                                        Информация об аккаунте
+                                    </div>
+                                </a>
+                                <a href="a5.html">
+                                    <div class="sb-titlq">
+                                        <i class="fa fa-book bluerw"></i>
+                                        Адресная книга
+                                    </div>
+                                </a>
+                                <a href="a6.html">
+                                    <div class="sb-titlq">
+                                        <i class="fa fa-cart-arrow-down bluerw"></i>
+                                        Мои заказы
+                                    </div>
+                                </a>
+                                <a href="a7.html">
+                                    <div class="sb-titlq">
+                                        <i class="fa fa-credit-card bluerw"></i>
+                                        Платежные соглашения
+                                    </div>
+                                </a>
+                                <a href="a8.html">
+                                    <div class="sb-titlq">
+                                        <i class="fa fa-users bluerw"></i>
+                                        Повторяющиеся профили
+                                    </div>
+                                </a>
+                                <a href="a9.html">
+                                    <div class="sb-titlq">
+                                        <i class="fa fa-comments-o  bluerw"></i>
+                                        Отзывы о товарах
+                                    </div>
+                                </a>
+                                <a href="a10.html">
+                                    <div class="sb-titlq">
+                                        <i class="fa fa-star  bluerw"></i>
+                                        Список пожеланий
+                                    </div>
+                                </a>
+                                <a href="a11.html">
+                                    <div class="sb-titlq">
+                                        <i class="fa fa-archive   bluerw"></i>
+                                        Приложения
+                                    </div>
+                                </a>
+                                <a href="a12.html">
+                                    <div class="sb-titlq ">
+                                        <i class="fa fa-download bluerw"></i>
+                                        Загруженные продукты
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="col-main" class="account-page col-sm-15 col-md-15 clearfix">
+                        <div class="page-headers">
+                            <h1>Панель продавца</h1>
+                            <h2 class="flr welcome-txt hidden-xs">Добро пожаловать Alexey Ivanov!</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="total-statistic not-animated" data-animate="fadeInLeft" data-delay="200">
+                                    <h1 class="total-h1">Продажи за сегодня</h1>
+                                    <p>$ 1200.00</p>
+                                    <div class="bg-total">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-10 ">
+                                <div class="total-statistic not-animated" data-animate="fadeInRight" data-delay="200">
+                                    <h1 class="total-h1">Заказы за сегодня</h1>
+                                    <p>2</p>
+                                    <div class="bg-total">
+                                        <i class="fa fa-tag"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-20 ">
+                                <div class="not-animated" data-animate="fadeInUp" data-delay="200">
+                                    <div class="total-statistic-header">Ваш доход</div>
+                                    <div class="total-statistic clearfix">
+                                        <div class="row">
+                                            <div class="row">
+                                                <div class="col-md-3s border-right-lg">
+                                                    <h4>$1100.00</h4>
+                                                    <h5>Прошлая неделя</h5>
+                                                </div>
+                                                <div class="col-md-3s border-right-lg">
+                                                    <h4>$0.00</h4>
+                                                    <h5>Прошлый месяц</h5>
+                                                </div>
+                                                <div class="col-md-3s">
+                                                    <h4>$0.00</h4>
+                                                    <h5>Прошлый год</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-20 ">
+                                <div class="not-animated" data-animate="fadeInUp" data-delay="400">
+                                    <div class="total-statistic-header">Заказы</div>
+                                    <div class="total-statistic clearfix">
+                                        <div class="row statistic-full">
+                                            <div class="col-md-4 col-sm-6 col-xs-10">Всего</div>
+                                            <div class="col-md-2 col-sm-6 col-xs-4 red">3</div>
+                                        </div>
+                                        <div class="row statistic-full">
+                                            <div class="col-md-4 col-sm-6 col-xs-10">Завершенные</div>
+                                            <div class="col-md-2 col-sm-6 col-xs-4 red">2</div>
+                                        </div>
+                                        <div class="row statistic-full">
+                                            <div class="col-md-4 col-sm-6 col-xs-10">До</div>
+                                            <div class="col-md-2 col-sm-6 col-xs-4 no-active">0</div>
+                                        </div>
+                                        <div class="row statistic-full">
+                                            <div class="col-md-4 col-sm-6 col-xs-10">В обработке</div>
+                                            <div class="col-md-2 col-sm-6 col-xs-4 no-active">0</div>
+                                        </div>
+                                        <div class="row statistic-full">
+                                            <div class="col-md-4 col-sm-6 col-xs-10">Отмененные</div>
+                                            <div class="col-md-2 col-sm-6 col-xs-4  no-active">0</div>
+                                        </div>
+                                        <div class="row statistic-full">
+                                            <div class="col-md-4 col-sm-6 col-xs-10">Возвращенные</div>
+                                            <div class="col-md-2 col-sm-6 col-xs-4  no-active">0</div>
+                                        </div>
+                                        <div class="row statistic-full">
+                                            <div class="col-md-4 col-sm-6 col-xs-10">На удержании</div>
+                                            <div class="col-md-2 col-sm-6 col-xs-4  red">1</div>
+                                        </div>
+                                        <div class="full-statistic-price">$ 1200.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="total-statistic-header">Отчет о продажах</div>
+                        <div class="total-statistic clearfix">
+                            <div id="chart_div" style="width: 100%; height: 300px;"></div>
+                        </div>
+                        <div class="row wrap-table  not-animated" data-animate="fadeInUp" data-delay="200">
+                            <h4>Последние пять заказов</h4>
+                            <table class="table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="order_number">Номер заказа</th>
+                                        <th class="">Название товара</th>
+                                        <th class="">Цена</th>
+                                        <th class="">Кол-во</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd">
+                                        <td>
+                                            <a href="./account.php" title="">#1031</a>
+                                        </td>
+                                        <td>
+                                            <span class="note">Macbook pro retina 13</span>
+                                        </td>
+                                        <td>
+                                            <span class="status_authorized">$ 2000</span>
+                                        </td>
+                                        <td>
+                                            <span class="status_unfulfilled">1</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td>
+                                            <a href="./account.php" title="">#1032</a>
+                                        </td>
+                                        <td>
+                                            <span class="note">Iphone 5s</span>
+                                        </td>
+                                        <td>
+                                            <span class="status_authorized">$ 1300</span>
+                                        </td>
+                                        <td>
+                                            <span class="status_unfulfilled">1</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row wrap-table not-animated" data-animate="fadeInUp" data-delay="200">
+                            <h4>Самые популярные товары</h4>
+                            <table class="table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="">Название товара</th>
+                                        <th class="">Цена</th>
+                                        <th class="">Кол-во просмотров</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd">
+                                        <td>
+                                            <span class="note">Мобильный телефон Samsung Galaxy S4 GT-I9500 16Gb черный</span>
+                                        </td>
+                                        <td>
+                                            <span class="status_authorized">$ 600</span>
+                                        </td>
+                                        <td>
+                                            <span class="status_unfulfilled">7</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td>
+                                            <span class="note">Iphone 5s</span>
+                                        </td>
+                                        <td>
+                                            <span class="status_authorized">$ 1300</span>
+                                        </td>
+                                        <td>
+                                            <span class="status_unfulfilled">4</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            </div>
+            <div class="collection-page col-sm-20 col-md-14 col-lg-15 mgls panel-body hidden-lg hidden-md">
+                <div class="panel-collapse in" id="message-1" aria-expanded="false" style="height: auto;">
+                    <div class="bs-example">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <h4 class="panel-title">
+                                            Место продаж
+                                            <i class="fa fa-angle-down flr fsss2"></i>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="collapseTwo" class="collapse">
+                                    <div class="panel-body">
+                                        <div class="sb-wrapper">
+                                            <a href="m1.html">
+                                                <div class="sb-titlq active-acc">
+                                                    <i class="fa fa-sign-in bluerw fst"></i>
+                                                    Панель продавца
+                                                </div>
+                                            </a>
+                                            <a href="m2.html">
+                                                <div class="sb-titlq">
+                                                    <i class="fa fa-sliders  bluerw"></i>
+                                                    Управление товарами
+                                                </div>
+                                            </a>
+                                            <a href="m3.html">
+                                                <div class="sb-titlq">
+                                                    <i class="fa fa-cart-arrow-down bluerw"></i>
+                                                    Заказы
+                                                </div>
+                                            </a>
+                                            <a href="m4.html">
+                                                <div class="sb-titlq">
+                                                    <i class="fa fa-refresh bluerw"></i>
+                                                    История транзакций
+                                                </div>
+                                            </a>
+                                            <a href="m5.html">
+                                                <div class="sb-titlq">
+                                                    <i class="fa fa-user bluerw"></i>
+                                                    Мой профиль
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                        <h4 class="panel-title">
+                                            Мой аккаунт
+                                            <i class="fa fa-angle-down flr fsss2"></i>
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="collapseThree" class="collapse">
+                                    <div class="panel-body">
+                                        <div class="sb-wrapper">
+                                            <a href="account.html">
+                                                <div class="sb-titlq ">
+                                                    <i class="fa fa-sign-in bluerw fst"></i>
+                                                    Панель аккаунта
+                                                </div>
+                                            </a>
+                                            <a href="a4.html">
+                                                <div class="sb-titlq">
+                                                    <i class="fa fa-question-circle bluerw"></i>
+                                                    Информация об аккаунте
+                                                </div>
+                                            </a>
+                                            <a href="a5.html">
+                                                <div class="sb-titlq active-acc">
+                                                    <i class="fa fa-book bluerw"></i>
+                                                    Адресная книга
+                                                </div>
+                                            </a>
+                                            <a href="a6.html">
+                                                <div class="sb-titlq">
+                                                    <i class="fa fa-cart-arrow-down bluerw"></i>
+                                                    Мои заказы
+                                                </div>
+                                            </a>
+                                            <a href="a7.html">
+                                                <div class="sb-titlq">
+                                                    <i class="fa fa-credit-card bluerw"></i>
+                                                    Платежные соглашения
+                                                </div>
+                                            </a>
+                                            <a href="a8.html">
+                                                <div class="sb-titlq">
+                                                    <i class="fa fa-users bluerw"></i>
+                                                    Повторяющиеся профили
+                                                </div>
+                                            </a>
+                                            <a href="a9.html">
+                                                <div class="sb-titlq">
+                                                    <i class="fa fa-comments-o  bluerw"></i>
+                                                    Отзывы о товарах
+                                                </div>
+                                            </a>
+                                            <a href="a10.html">
+                                                <div class="sb-titlq">
+                                                    <i class="fa fa-star  bluerw"></i>
+                                                    Список пожеланий
+                                                </div>
+                                            </a>
+                                            <a href="a11.html">
+                                                <div class="sb-titlq">
+                                                    <i class="fa fa-archive   bluerw"></i>
+                                                    Приложения
+                                                </div>
+                                            </a>
+                                            <a href="a12.html">
+                                                <div class="sb-titlq ">
+                                                    <i class="fa fa-download bluerw"></i>
+                                                    Загруженные продукты
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="inner hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-10">
+                        <h5>Покупки с нами</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="about.html">О нас</a>
+                            </li>
+                            <li>
+                                <a href="customer-service.html">Обслуживание клиентов</a>
+                            </li>
+                            <li>
+                                <a href="privacy-policy.html">Политика конфиденциальности</a>
+                            </li>
+                            <li>
+                                <a href="terms-and-conditions.html">Условия</a>
+                            </li>
+                            <li>
+                                <a href="faq.html">FAQ</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-10">
+                        <h5>Ваш аккаунт</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="account.html">Панель аккаунта</a>
+                            </li>
+                            <li>
+                                <a href="a4.html">Личная информация</a>
+                            </li>
+                            <li>
+                                <a href="advanced.html">Расширенный поиск</a>
+                            </li>
+                            <li>
+                                <a href="a6.html">История заказов</a>
+                            </li>
+                            <li>
+                                <a href="sitemap.html">Карта сайта</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-10">
+                        <h5>О нас</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="about-site.html">О сайте</a>
+                            </li>
+                            <li>
+                                <a href="service.html">Обслуживание клиентов</a>
+                            </li>
+                            <li>
+                                <a href="partners.html">Партнеры</a>
+                            </li>
+                            <li>
+                                <a href="careers.html">Карьера</a>
+                            </li>
+                            <li>
+                                <a href="refund-policy.html">Политика возврата</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-10">
+                        <h5>Контактная информация</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="feedback.html">Обратная связь</a>
+                            </li>
+                            <li>
+                                <a href="support.html">Служба Поддержки</a>
+                            </li>
+                        </ul>
+                        <h5>Социальные СЕТИ</h5>
+                        <ul class="list-unstyled list-inline social">
+                            <li>
+                                <a href="#" class="icon od">od</a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon vk">vk</a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon tw">tw</a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon in">in</a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon ml">ml</a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon fb">fb</a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon gl">gl</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="separator"></div>
+                <div class="separator"></div>
+                <div class="row">
+                    <div class="col-lg-20 col-md-10">
+                        <ul class="list-unstyled nav-justified text-center payment-sys">
+                            <li>
+                                <img class="img-responsivess" src="./assets/images/footer-logo-1.jpg" alt="" />
+                            </li>
+                            <li>
+                                <img class="img-responsivess" src="./assets/images/footer-logo-2.jpg" alt="" />
+                            </li>
+                            <li>
+                                <img class="img-responsivess" src="./assets/images/footer-logo-3.jpg" alt="" />
+                            </li>
+                            <li>
+                                <img class="img-responsivess" src="./assets/images/footer-logo-4.jpg" alt="" />
+                            </li>
+                            <li>
+                                <img class="img-responsivess" src="./assets/images/footer-logo-5.jpg" alt="" />
+                            </li>
+                            <li>
+                                <img class="img-responsivess" src="./assets/images/footer-logo-6.jpg" alt="" />
+                            </li>
+                            <li>
+                                <img class="img-responsivess" src="./assets/images/footer-logo-7.jpg" alt="" />
+                            </li>
+                            <li>
+                                <img class="img-responsivess" src="./assets/images/footer-logo-8.jpg" alt="" />
+                            </li>
+                            <li>
+                                <img class="img-responsivess" src="./assets/images/footer-logo-9.jpg" alt="" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-20">
+                    <div class="pull-right">
+                        <label>Ваш язык:</label>
+                        <select class="selectpicker dropup" data-width="120">
+                            <option>Русский</option>
+                            <option>English</option>
+                            <option>Espanol</option>
+                            <option>Deutch</option>
+                        </select>
+                    </div>
+                    <p>&copy; All rights reserved Webtransfer, 2006—2015</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- build:css css/libs.css -->
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/tooltipster/css/tooltipster.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/flexslider/flexslider.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
+    <!-- endbuild -->
+    <!-- build:css css/styles.css -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <!-- endbuild -->
+    <link href="./assets/stylesheets/cs.animate.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./assets/stylesheets/application.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./assets/stylesheets/bootstrap.min.3x.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./assets/stylesheets/cs.bootstrap.3x.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./assets/stylesheets/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./assets/stylesheets/camera.css" rel="stylesheet" type="text/css" media="all">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./assets/stylesheets/cs.global.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./assets/stylesheets/cs.style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./assets/stylesheets/cs.media.3x.css" rel="stylesheet" type="text/css" media="all">
+    <!--[if IE 8 ]>
+    <link href="./assets/stylesheets/ie8.css" rel="stylesheet" type="text/css" media="all">
+    <![endif]-->
+    <!-- build:js js/libs.js -->
+    <script src="./assets/javascripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="./assets/javascripts/bootstrap.min.3x.js" type="text/javascript"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="bower_components/flexslider/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+    <script type="text/javascript" src="bower_components/tooltipster/js/jquery.tooltipster.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery.countdown.min.js"></script>
+    <!-- endbuild -->
+    <div class="modal fade" id="quick-shop-modal"></div>
+    <script src="./assets/javascripts/modernizr.js" type="text/javascript"></script>
+    <script src="./assets/javascripts/cs.global.js" type="text/javascript"></script>
+    <script src="./assets/javascripts/jquery.camera.min.js" type="text/javascript"></script>
+    <script src="./assets/javascripts/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="./assets/javascripts/owl.carousel.js" type="text/javascript"></script>
+    <script src="./assets/javascripts/jquery.imagesloaded.min.js" type="text/javascript"></script>
+    <script src="./assets/javascripts/application.js" type="text/javascript"></script>
+    <script src="./assets/javascripts/cs.script.js" type="text/javascript"></script>
+</body>
+
+</html>
